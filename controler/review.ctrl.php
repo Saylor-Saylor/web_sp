@@ -14,7 +14,6 @@ if($user_role && $user_role == 3 && !$action){
     $articleId = $_REQUEST['articleid'];
     $content = $db->getReview($articleId, $id_user);
     $review->getReview($content);
-    var_dump($content);
 } else if($user_role && $user_role == 3 && $action == "savereview"){
     $review_id = $_REQUEST['reviewId'];
     $theme = $_REQUEST['theme'];

@@ -16,21 +16,20 @@ if($user_role && $user_role == 1 && !$action){
     $manage->getContent($article, $reviewers);
 } else if ($action == "savemanage") {
     $state = $_REQUEST["state"];
-    var_dump($state);
     $db->setState($articleId, $state);
     //$reviewer1 = $_REQUEST["reviwer1"];
-    if(isset($_REQUEST["reviwer1"]) && $_REQUEST["reviwer2"] != 0){
-        $reviewer = $_REQUEST["reviwer1"];
-        $db->setReviewer($articleId, $reviewer);
+    var_dump($_REQUEST);
+    if(isset($_REQUEST["reviwer1"]) && $_REQUEST["reviwer1"] != "None"){
 
+        $db->setReviewer($articleId, $_REQUEST["reviwer1"]);
     }
-    if(isset($_REQUEST["reviwer2"]) && $_REQUEST["reviwer2"] != 0){
-        $reviewer = $_REQUEST["reviwer2"];
-        $db->setReviewer($articleId, $reviewer);
+    if(isset($_REQUEST["reviwer2"]) && $_REQUEST["reviwer2"] != "None"){
+
+        $db->setReviewer($articleId, $_REQUEST["reviwer2"]);
     }
-    if(isset($_REQUEST["reviwer3"]) && $_REQUEST["reviwer3"] != 0){
-        $reviewer = $_REQUEST["reviwer3"];
-        $db->setReviewer($articleId, $reviewer);
+    if(isset($_REQUEST["reviwer3"]) && $_REQUEST["reviwer3"] != "None"){
+
+        $db->setReviewer($articleId, $_REQUEST["reviwer3"]);
     }
 
 

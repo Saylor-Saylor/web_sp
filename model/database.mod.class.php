@@ -25,6 +25,48 @@ class MySQLConnector{
         }
     }
 
+    function getAllUserArticles($id_user){
+        $mysql_pdo_error = false;
+        $query = "SELECT * FROM articles WHERE articles.user_id = :user;";
+        $sth = $this->connect->prepare($query);
+        $sth->bindValue(':user', $id_user, PDO::PARAM_INT);
+        $sth->execute();
+        $errors = $sth->errorInfo();
+        if ($errors[0] + 0 > 0){
+            $mysql_pdo_error = true;
+        }
+        if ($mysql_pdo_error == false){
+            $all = $sth->fetchAll(PDO::FETCH_ASSOC);
+            return $all;
+        }else{
+            echo "Eror - PDOStatement::errorInfo(): ";
+            print_r($errors);
+            echo "SQL : $query";
+        }
+    }
+
+    function getAllUsers(){
+        $mysql_pdo_error = false;
+        $query = "SELECT * FROM users;";
+        $sth = $this->connect->prepare($query);
+        $sth->execute();
+        $errors = $sth->errorInfo();
+        if ($errors[0] + 0 > 0){
+            $mysql_pdo_error = true;
+        }
+        if ($mysql_pdo_error == false){
+            $all = $sth->fetchAll(PDO::FETCH_ASSOC);
+            if(empty($all)){
+                return null;
+            }
+            return $all;
+        }else{
+            echo "Eror - PDOStatement::errorInfo(): ";
+            print_r($errors);
+            echo "SQL : $query";
+        }
+    }
+
     function setReviewer($articleId, $reviewer){
         $mysql_pdo_error = false;
         $query = 'INSERT INTO reviews (user_id, article_id)

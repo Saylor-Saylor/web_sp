@@ -16,7 +16,6 @@ class Manage{
         <div class="form-group">
         <form action="" method="post" enctype="multipart/form-data">
             <div class="col-md-12">
-                <h4>All articles</h4>
                 <div class="table-responsive">
 
 
@@ -42,10 +41,10 @@ class Manage{
                                     <td>
 
                                         <select id="reviwer1" name="reviwer1">
-                                            <option>None</option>
+                                            <option> 0 = None</option>
                                             <?php
                                             foreach ($reviewers as $key){
-                                                echo "<option>".$key["name"]."</option>";
+                                                echo "<option>".$key["id"]." = ".$key["name"]."</option>";
                                             }
                                             ?>
                                         </select>
@@ -55,18 +54,18 @@ class Manage{
 
                                 <?php }?>
 
-                                <?php if(count($content) > 0 && $content[0]["origin"] &&  $content[0]["origin"] != null){?>
+                                <?php if(count($content) > 0){?>
                                     <td><?php echo $content[0]["origin"];?></td>
                                     <td><?php echo $content[0]["theme"];?></td>
                                     <td><?php echo $content[0]["tech"];?></td>
                                     <td><?php echo $content[0]["lang"];?></td>
                                     <td><?php echo $content[0]["recom"];?></td>
                                 <?php } else {?>
-                                    <td>none</td>
-                                    <td>none</td>
-                                    <td>none</td>
-                                    <td>none</td>
-                                    <td>none</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
 
                                     <?php }?>
 
@@ -79,10 +78,10 @@ class Manage{
                                     <td>
 
                                         <select id="reviwer2" name="reviwer2">
-                                            <option value="0">None</option>
+                                            <option> 0 = None</option>
                                             <?php
                                             foreach ($reviewers as $key){
-                                                echo "<option value=\"".$key["id"]."\">".$key["name"]."</option..>";
+                                                echo "<option>".$key["id"]." = ".$key["name"]."</option>";
                                             }
                                             ?>
                                         </select>
@@ -92,18 +91,18 @@ class Manage{
 
                                 <?php }?>
 
-                                <?php if(count($content) > 1 && $content[1]["origin"] &&  $content[1]["origin"] != null){?>
+                                <?php if(count($content) > 1){?>
                                     <td><?php echo $content[1]["origin"];?></td>
                                     <td><?php echo $content[1]["theme"];?></td>
                                     <td><?php echo $content[1]["tech"];?></td>
                                     <td><?php echo $content[1]["lang"];?></td>
                                     <td><?php echo $content[1]["recom"];?></td>
                                 <?php } else {?>
-                                    <td>none</td>
-                                    <td>none</td>
-                                    <td>none</td>
-                                    <td>none</td>
-                                    <td>none</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
 
                                 <?php }?>
 
@@ -116,10 +115,10 @@ class Manage{
                                     <td>
 
                                         <select id="reviwer3" name="reviwer3">
-                                            <option value="0">None</option>
+                                            <option > 0 = None</option>
                                             <?php
                                             foreach ($reviewers as $key){
-                                                echo "<option value=\"".$key["id"]."\">".$key["name"]."</option..>";
+                                                echo "<option>".$key["id"]." = ".$key["name"]."</option>";
                                             }
                                             ?>
                                         </select>
@@ -129,18 +128,18 @@ class Manage{
 
                                 <?php }?>
 
-                                <?php if(count($content) > 2 && $content[2]["origin"] &&  $content[2]["origin"] != null){?>
+                                <?php if(count($content) > 2 ){?>
                                     <td><?php echo $content[2]["origin"];?></td>
                                     <td><?php echo $content[2]["theme"];?></td>
                                     <td><?php echo $content[2]["tech"];?></td>
                                     <td><?php echo $content[2]["lang"];?></td>
                                     <td><?php echo $content[2]["recom"];?></td>
                                 <?php } else {?>
-                                    <td>none</td>
-                                    <td>none</td>
-                                    <td>none</td>
-                                    <td>none</td>
-                                    <td>none</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
 
                                 <?php }?>
 

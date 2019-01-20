@@ -17,8 +17,8 @@ if($id_user){
         $articlesarr = $db->getAllArticlesReview($id_user);
     } else if($user_flag == 1){
         $articlesarr = $db->getAllArticles();
-    } else {
-        $articlesarr = $db->getAllStatesArticles();
+    } else if($user_flag == 2){
+        $articlesarr = $db->getAllUserArticles($id_user);
     }
 } else if(!$id_user){
     $articlesarr = $db->getAllStatesArticles();

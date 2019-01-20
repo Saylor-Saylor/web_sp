@@ -29,7 +29,7 @@ class Articles
                             ?>
 
                             <th>Edit</th>
-                            <th>Delete</th>
+                            <th>Status</th>
                          <?php
                         }
 
@@ -82,14 +82,32 @@ class Articles
                                         data-target="index.php?page=newarticle&action=edit&articleid=<?php echo $key["id"];?>"><span class="glyphicon glyphicon-pencil"></span></button>
                             </p>
                         </td>
-                        <td>
-                            <p data-placement="top" data-toggle="tooltip" title="Delete">
-                                <button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal"
-                                        data-target="index.php?page=articles&articleid=<?php echo $key["id"];?>"><span class="glyphicon glyphicon-trash"></span></button>
-                            </p>
-                        </td>
+                            <td><?php
+                                switch ($key["state"]){
+                                    case 0: echo "Wait";
+                                        break;
+                                    case 1: echo "Ok";
+                                        break;
+                                    case 2: echo "Delete";
+                                        break;
+                                }
+
+
+                                ?></td>
+                            <?php
+                        } else if ($user_flag == 2){
+
+                        ?>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+
                             <?php
                         }
+
 
                         ?>
 

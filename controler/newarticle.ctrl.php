@@ -28,7 +28,7 @@ if($id_user){
             }
             $targ_file = $targ_dir.basename($_FILES["file"]["name"]);
             if($_FILES["file"]["type"] != "application/pdf"){
-                echo "Sorry, only PDF files are allowed.";
+                //echo "Sorry, only PDF files are allowed.";
                 $fileExist = false;
             }
         }else{
@@ -123,12 +123,14 @@ if($id_user){
         }else{
             $newArticle->getError();
         }
-    }else if(@$_SESSION["user"]["id"] == 2){
+    }else if(@$_SESSION["user"]["user_role_id"] == 2){
         $newArticle->getArticleForm();
     } else {
         header('Location: http://localhost/site/index.php?page=404');
     }
-} else {
+} else if(@$_SESSION["user"]["user_role_id"] == 2){
+    $newArticle->getArticleForm();
+}else {
     header('Location: http://localhost/site/index.php?page=404');
 }
 
